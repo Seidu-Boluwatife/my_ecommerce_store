@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import NavBar from './component/navBar'
-import AddLoader from './component/addLoader'
 import ItemProvider from './context/context'
 import CartAdded from './component/cartAdded'
 import { Toaster } from 'react-hot-toast'
