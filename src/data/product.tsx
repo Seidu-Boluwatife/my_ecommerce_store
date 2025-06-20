@@ -31,131 +31,131 @@ type itemsProps = {
 const items: itemsProps= [
         { 
             id:1, 
-            image: "/src/assets/image/coverPhoto.jpg",
+            image: "/image/coverPhoto.jpg",
             text: 'v-wavy Seamless ',
             price: 3700
         },
              { 
             id:2, 
-            image: "src/assets/image/imgSleep2.jpeg",
+            image: "/image/imgSleep2.jpeg",
             text: 'victoria seduction',
             price: 3700
         },
              { 
             id:3, 
-            image: "src/assets/image/imgSleep2.jpeg",
+            image: "/image/imgSleep2.jpeg",
             text: 'Diana Rose',
             price: 3700
         },
              { 
             id:4, 
-            image: "/src/assets/image/coverPhoto.jpg",
+            image: "//image/coverPhoto.jpg",
             text: 'Silk-sleep',
             price: 3700
         },
              { 
             id:5, 
-            image: "src/assets/image/imgLin1.jpeg",
+            image: "/image/imgLin1.jpeg",
             text: 'Lacey Thong',
             price: 3700
         },
          { 
             id:6, 
-            image: "src/assets/image/imgLin1.jpeg",
+            image: "/image/imgLin1.jpeg",
             text: 'Lacey Thong',
             price: 3700
         },
          { 
             id:7, 
-            image: "src/assets/image/imgLin1.jpeg",
+            image: "/image/imgLin1.jpeg",
             text: 'Lacey Thong',
             price: 3700
         },
          { 
             id:8, 
-            image: "src/assets/image/imgLin1.jpeg",
+            image: "/image/imgLin1.jpeg",
             text: 'Lacey Thong',
             price: 3700
         },
          { 
             id:9, 
-            image: "src/assets/image/imgLin1.jpeg",
+            image: "/image/imgLin1.jpeg",
             text: 'Lacey Thong',
             price: 3700
         },
          { 
             id:10, 
-            image: "src/assets/image/imgLin1.jpeg",
+            image: "/image/imgLin1.jpeg",
             text: 'Lacey Thong',
             price: 3700
         },
 
          { 
             id:11, 
-            image: "src/assets/image/imgLin1.jpeg",
+            image: "/image/imgLin1.jpeg",
             text: 'Lacey Thong',
             price: 3700
         },
 
          { 
             id:12, 
-            image: "src/assets/image/imgLin1.jpeg",
+            image: "/image/imgLin1.jpeg",
             text: 'Lacey Thong',
             price: 3700
         },
 
          { 
             id:13, 
-            image: "src/assets/image/imgLin1.jpeg",
+            image: "/image/imgLin1.jpeg",
             text: 'Lacey Thong',
             price: 3700
         },
 
          { 
             id:14, 
-            image: "src/assets/image/imgLin1.jpeg",
+            image: "/image/imgLin1.jpeg",
             text: 'Lacey Thong',
             price: 3700
         },
 
          { 
             id:15, 
-            image: "src/assets/image/imgLin1.jpeg",
+            image: "/image/imgLin1.jpeg",
             text: 'Lacey Thong',
             price: 3700
         },
 
          { 
             id:16, 
-            image: "src/assets/image/imgLin1.jpeg",
+            image: "/image/imgLin1.jpeg",
             text: 'Lacey Thong',
             price: 3700
         },
 
          { 
             id:17, 
-            image: "src/assets/image/imgLin1.jpeg",
+            image: "/image/imgLin1.jpeg",
             text: 'Lacey Thong',
             price: 3700
         },
 
          { 
             id:18, 
-            image: "src/assets/image/imgLin1.jpeg",
+            image: "/image/imgLin1.jpeg",
             text: 'Lacey Thong',
             price: 3700
         },
 
          { 
             id:19, 
-            image: "src/assets/image/imgLin1.jpeg",
+            image: "/image/imgLin1.jpeg",
             text: 'Lacey Thong',
             price: 3700
         },
 
          { 
             id:20, 
-            image: "src/assets/image/imgLin1.jpeg",
+            image: "/image/imgLin1.jpeg",
             text: 'Lacey Thong',
             price: 3700
         },
