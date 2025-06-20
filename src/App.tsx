@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/about-us" element={<AboutUs />} />
       </Routes>
 
-      <AddLoader />
+      {/* <AddLoader /> */}
       <Toaster position="top-right" reverseOrder={false} />
     </ItemProvider>
   )

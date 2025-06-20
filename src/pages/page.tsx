@@ -13,7 +13,7 @@ const Page = () => {
       {/* <div className=''> */}
       <div className='mb-20'>
           <p className='text-center text-black text-8xl font-bold mb-5 '>
-          She's Lingerie
+          She's Essentials
         </p>
         <p className='text-center text-black text-2xl  '>
           Where Comfort Meets Allure
