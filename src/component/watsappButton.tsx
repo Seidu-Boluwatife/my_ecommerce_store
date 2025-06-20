@@ -1,6 +1,6 @@
 // src/components/ui/WhatsAppButton.tsx
 import React from 'react';
-import WhatsAppIcon from '../assets/image/watsapp.jpg'
+import WhatsAppIcon from '/image/watsapp.jpg'
 
 interface WhatsAppButtonProps {
   className?: string;

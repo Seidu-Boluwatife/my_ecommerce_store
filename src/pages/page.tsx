@@ -1,6 +1,6 @@
 import Boxes from '../component/boxes'
 //import React from 'react'
-import CoverPhoto from "../assets/image/coverPhoto.jpg"
+import CoverPhoto from "/image/coverPhoto.jpg"
 import Button from '../component/button'
 //import CartAdded from '../component/cartAdded'
 import WhatsAppButton from '../component/watsappButton'

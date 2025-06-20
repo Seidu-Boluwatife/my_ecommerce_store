@@ -49,7 +49,7 @@ const items: itemsProps= [
         },
              { 
             id:4, 
-            image: "//image/coverPhoto.jpg",
+            image: "/image/coverPhoto.jpg",
             text: 'Silk-sleep',
             price: 3700
         },
