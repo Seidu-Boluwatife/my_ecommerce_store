@@ -25,138 +25,138 @@ type Item = {
     quantity?: number;
 }
 
-const items: Item[]= [
-        { 
-            id:1, 
-            image: "/image/image10.jpg",
-            text: 'Sleeve3-Striped Shirts ',
-            price: 12000
-        },
-             { 
-            id:2, 
-            image: "/image/image9.jpg",
-            text: 'T-shirt with Tape Details',
-            price: 24000
-        },
-             { 
-            id:3, 
-            image: "/image/image8.jpg",
-            text: 'Checkered Shirt',
-            price: 37000
-        },
-             {  
-            id:4, 
-            image: "/image/image7.jpg",
-            text: 'Skinny Fit Jeans',
-            price: 18000
-        },
-             { 
-            id:5, 
-            image: "/image/image6.jpg",
-            text: 'Vertical Striped Shirt',
-            price: 28000
-        },
-         { 
-            id:6, 
-            image: "/image/image5.jpg",
-            text: 'Cool Jean',
-            price: 3000
-        },
-         { 
-            id:7, 
-            image: "/image/image4.jpg",
-            text: 'Courage Graphic T-short',
-            price: 23000
-        },
-         { 
-            id:8, 
-            image: "/image/image3.jpg",
-            text: 'Polo with Contrast Trims',
-            price: 14000
-        },
-         { 
-            id:9, 
-            image: "/image/Frame1.jpg",
-            text: 'Gradient Graphic T-shirt',
-            price: 3700
-        },
-         { 
-            id:10, 
-            image: "/image/image2.jpg",
-            text: 'Polo with Tipping Details',
-            price: 27000
-        },
+// const items: Item[]= [
+//         { 
+//             id:1, 
+//             image: "/image/image10.jpg",
+//             text: 'Sleeve3-Striped Shirts ',
+//             price: 12000
+//         },
+//              { 
+//             id:2, 
+//             image: "/image/image9.jpg",
+//             text: 'T-shirt with Tape Details',
+//             price: 24000
+//         },
+//              { 
+//             id:3, 
+//             image: "/image/image8.jpg",
+//             text: 'Checkered Shirt',
+//             price: 37000
+//         },
+//              {  
+//             id:4, 
+//             image: "/image/image7.jpg",
+//             text: 'Skinny Fit Jeans',
+//             price: 18000
+//         },
+//              { 
+//             id:5, 
+//             image: "/image/image6.jpg",
+//             text: 'Vertical Striped Shirt',
+//             price: 28000
+//         },
+//          { 
+//             id:6, 
+//             image: "/image/image5.jpg",
+//             text: 'Cool Jean',
+//             price: 3000
+//         },
+//          { 
+//             id:7, 
+//             image: "/image/image4.jpg",
+//             text: 'Courage Graphic T-short',
+//             price: 23000
+//         },
+//          { 
+//             id:8, 
+//             image: "/image/image3.jpg",
+//             text: 'Polo with Contrast Trims',
+//             price: 14000
+//         },
+//          { 
+//             id:9, 
+//             image: "/image/Frame1.jpg",
+//             text: 'Gradient Graphic T-shirt',
+//             price: 3700
+//         },
+//          { 
+//             id:10, 
+//             image: "/image/image2.jpg",
+//             text: 'Polo with Tipping Details',
+//             price: 27000
+//         },
 
-         { 
-            id:11, 
-            image: "/image/Frame11.jpg",
-            text: 'Cool Polo',
-            price: 17000
-        },
+//          { 
+//             id:11, 
+//             image: "/image/Frame11.jpg",
+//             text: 'Cool Polo',
+//             price: 17000
+//         },
 
-         { 
-            id:12, 
-            image: "/image/Frame12.jpg",
-            text: 'Cool Stripes',
-            price: 47000
-        },
+//          { 
+//             id:12, 
+//             image: "/image/Frame12.jpg",
+//             text: 'Cool Stripes',
+//             price: 47000
+//         },
 
-        //  { 
-        //     id:13, 
-        //     image: "/image/imgLin1.jpeg",
-        //     text: 'Lacey Thong',
-        //     price: 3700
-        // },
+//         //  { 
+//         //     id:13, 
+//         //     image: "/image/imgLin1.jpeg",
+//         //     text: 'Lacey Thong',
+//         //     price: 3700
+//         // },
 
-        //  { 
-        //     id:14, 
-        //     image: "/image/imgLin1.jpeg",
-        //     text: 'Lacey Thong',
-        //     price: 3700
-        // },
+//         //  { 
+//         //     id:14, 
+//         //     image: "/image/imgLin1.jpeg",
+//         //     text: 'Lacey Thong',
+//         //     price: 3700
+//         // },
 
-        //  { 
-        //     id:15, 
-        //     image: "/image/imgLin1.jpeg",
-        //     text: 'Lacey Thong',
-        //     price: 3700
-        // },
+//         //  { 
+//         //     id:15, 
+//         //     image: "/image/imgLin1.jpeg",
+//         //     text: 'Lacey Thong',
+//         //     price: 3700
+//         // },
 
-        //  { 
-        //     id:16, 
-        //     image: "/image/imgLin1.jpeg",
-        //     text: 'Lacey Thong',
-        //     price: 3700
-        // },
+//         //  { 
+//         //     id:16, 
+//         //     image: "/image/imgLin1.jpeg",
+//         //     text: 'Lacey Thong',
+//         //     price: 3700
+//         // },
 
-        //  { 
-        //     id:17, 
-        //     image: "/image/imgLin1.jpeg",
-        //     text: 'Lacey Thong',
-        //     price: 3700
-        // },
+//         //  { 
+//         //     id:17, 
+//         //     image: "/image/imgLin1.jpeg",
+//         //     text: 'Lacey Thong',
+//         //     price: 3700
+//         // },
 
-        //  { 
-        //     id:18, 
-        //     image: "/image/imgLin1.jpeg",
-        //     text: 'Lacey Thong',
-        //     price: 3700
-        // },
+//         //  { 
+//         //     id:18, 
+//         //     image: "/image/imgLin1.jpeg",
+//         //     text: 'Lacey Thong',
+//         //     price: 3700
+//         // },
 
-        //  { 
-        //     id:19, 
-        //     image: "/image/imgLin1.jpeg",
-        //     text: 'Lacey Thong',
-        //     price: 3700
-        // },
+//         //  { 
+//         //     id:19, 
+//         //     image: "/image/imgLin1.jpeg",
+//         //     text: 'Lacey Thong',
+//         //     price: 3700
+//         // },
 
-        //  { 
-        //     id:20, 
-        //     image: "/image/imgLin1.jpeg",
-        //     text: 'Lacey Thong',
-        //     price: 3700
-        // },   
-]
+//         //  { 
+//         //     id:20, 
+//         //     image: "/image/imgLin1.jpeg",
+//         //     text: 'Lacey Thong',
+//         //     price: 3700
+//         // },   
+// ]
 const MoreInfo = ({ product, onClose }: MoreInfoProps) => {
      const dispatch = useAppDispatch();
 

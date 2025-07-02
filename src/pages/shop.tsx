@@ -1,7 +1,7 @@
 // import React from 'react'
 import Products from '../data/product'
 import Footer from '../component/footer'
-import WhatsAppButton from '../component/watsappButton'
+//import WhatsAppButton from '../component/watsappButton'
 
 const Shop = () => {
   return (

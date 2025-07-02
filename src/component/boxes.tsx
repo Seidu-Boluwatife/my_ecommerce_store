@@ -3,7 +3,7 @@ import React from "react";
 import type { ReactNode } from "react";
 import type { ReactElement } from "react";
 
-import Products from "../data/product";
+//import Products from "../data/product";
 
 
 interface BoxesProps{
