@@ -1,53 +1,88 @@
-import Boxes from '../component/boxes'
-//import React from 'react'
-import CoverPhoto from "/image/coverPhoto.jpg"
+// import Products from '../data/product';
 import Button from '../component/button'
-//import CartAdded from '../component/cartAdded'
-import WhatsAppButton from '../component/watsappButton'
+// import WhatsAppButton from '../component/watsappButton'
 import Footer from '../component/footer'
-//import bgImg from '../assets/image/bgImg.png'
-//bg-[url('/src/assets/image/bgImg.png')]bg-no-repeat bg-center bg-[length:1000px_1000px]
-const Page = () => {
-  return (
-    <div className="relative w-full  p-20 bg-white ">
-      {/* <div className=''> */}
-      <div className='mb-20'>
-          <p className='text-center text-black text-8xl font-bold mb-5 '>
-          She's Essentials
-        </p>
-        <p className='text-center text-black text-2xl  '>
-          Where Comfort Meets Allure
-        </p>
-      </div>
-        
+import {Link } from 'react-router-dom'
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
 
-        <div className=' border-2 mb-5 mt-5 border-gray-400'>
-          <ul className='flex justify-center gap-14 items-center   text-black'>
-            <li className=' cursor-pointer hover:text-amber-900' >Lingerie</li>
-            <li className=' cursor-pointer  hover:text-amber-900' >Bra</li>
-            <li className=' cursor-pointer  hover:text-amber-900' >Panty</li>
-            <li className=' cursor-pointer  hover:text-amber-900' >Sleep Wear</li>
-            <li className=' cursor-pointer  hover:text-amber-900' >Binki</li>
-            <li className=' cursor-pointer  hover:text-amber-900' >Active Wear</li>
-          
+// interface pageCounterProps{
+//   end:number;
+//   duration?:number;
+//   suffix?:string;
+// }
+
+
+const Page =() => {
+  const{ref,inView} = useInView({
     
-          </ul>
-        </div>
+    threshold:0.1,
 
-        {/* </div> */}
-        <Boxes image={<img src = {CoverPhoto} alt='img' className='w-[50%]   max-h-72'/>}
-          label ="V.S Seamless Panties">
-            
-         {3000}
-            <Button className='text-white'>Select Option</Button>
+  });
+  console.log("in view",inView)
+  return (
+  <div className="">
+      
+  <div className="bg-[url('/image/bgImg.jpg')] bg-cover bg-center mt-16 flex items-center justify-start px-4 sm:px-8 lg:px-16  min-h-[200px] sm:min-h-[300px] md:min-h-[400px] lg:min-h-screen">
+    <div className="max-w-xl " >
+      <img src='/image/star.svg' alt="" className="w-16 h-16 absolute -top-5 right-46 "/>
+      <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-1.1">
+        FIND CLOTHES THAT MATCH YOUR STYLE
+      </h1>
+      <p className="text-xs sm:text-base md:text-sm text-gray-700">
+        Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
+      </p>
+      <Link to='/shop'>
+        <Button className='mt-3 text-white bg-black '>Shop Now</Button>
+
+      </Link>
+      
+      <div ref={ref} className='flex flex-row space-x-3  mt-3 gap-4 '>
+      <div>
+        <p className='font-bold text-4xl '>
+          {inView && (    
+          <CountUp start={0} 
+          end={300}
+          duration={4}>
+
+          </CountUp> )}
+      
+          +</p>
+        <p>International Brands</p>
+      </div>
+      <div>
+        <p className='font-bold text-4xl'>
+            {inView && (    
+          <CountUp start={0} 
+          end={2000}
+          duration={4}>
+
+          </CountUp> )}+</p>
+        <p>High-Quality Products</p>
+
+      </div>
+      <div>
+        <p className='font-bold text-4xl'>
           
-            
-        </Boxes>
-      {/* <CartAdded /> */}
-      <WhatsAppButton/>
-      <Footer/>
-    </div>
-  )
-}
+            {inView && (    
+          <CountUp start={0} 
+          end={3000}
+          duration={4}>
 
-export default Page
+          </CountUp> )}+</p>
+        <p>Happy Customers</p>
+      </div>
+
+
+    </div>
+    </div>
+    
+  </div>
+
+    <Footer />
+
+</div>
+  );
+};
+
+export default Page;

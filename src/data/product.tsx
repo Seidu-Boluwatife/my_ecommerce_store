@@ -1,228 +1,197 @@
-//import { useState, useEffect } from "react";
+import { useState } from "react";
 import Button from "../component/button"
-// import AddToCart from "../component/addToCart";
-// import { useContext } from "react";
-// import { ItemContext } from "../context/context";
-import { addToCart } from "../redux/slice/cartSlice";
-import { useAppDispatch } from "../redux/hooks";
-import toast from "react-hot-toast";
-
+import MoreInfo from '../component/moreInfo'
+// import { addToCart } from "../redux/slice/cartSlice";
+// import { useAppDispatch } from "../redux/hooks";
+// import toast from "react-hot-toast";
+import aiStar from "../assets/aiStar.svg"
 
 //array of objects
-type itemsProps = {
+type Item = {
     id: number;
     text: string;
     image: string;
     price: number;
     quantity?: number;
-}[]
+}
 
-// interface propType{
-//      id: number;
-//     text: string;
-//     image: string;
-//     price: string;
-    
-
-
-// }
-
-
-const items: itemsProps= [
+const items: Item[]= [
         { 
             id:1, 
-            image: "/image/coverPhoto.jpg",
-            text: 'v-wavy Seamless ',
-            price: 3700
+            image: "/image/image10.jpg",
+            text: 'Sleeve3-Striped Shirts ',
+            price: 12000
         },
              { 
             id:2, 
-            image: "/image/imgSleep2.jpeg",
-            text: 'victoria seduction',
-            price: 3700
+            image: "/image/image9.jpg",
+            text: 'T-shirt with Tape Details',
+            price: 24000
         },
              { 
             id:3, 
-            image: "/image/imgSleep2.jpeg",
-            text: 'Diana Rose',
-            price: 3700
+            image: "/image/image8.jpg",
+            text: 'Checkered Shirt',
+            price: 37000
         },
-             { 
+             {  
             id:4, 
-            image: "/image/coverPhoto.jpg",
-            text: 'Silk-sleep',
-            price: 3700
+            image: "/image/image7.jpg",
+            text: 'Skinny Fit Jeans',
+            price: 18000
         },
              { 
             id:5, 
-            image: "/image/imgLin1.jpeg",
-            text: 'Lacey Thong',
-            price: 3700
+            image: "/image/image6.jpg",
+            text: 'Vertical Striped Shirt',
+            price: 28000
         },
          { 
             id:6, 
-            image: "/image/imgLin1.jpeg",
-            text: 'Lacey Thong',
-            price: 3700
+            image: "/image/image5.jpg",
+            text: 'Cool Jean',
+            price: 3000
         },
          { 
             id:7, 
-            image: "/image/imgLin1.jpeg",
-            text: 'Lacey Thong',
-            price: 3700
+            image: "/image/image4.jpg",
+            text: 'Courage Graphic T-short',
+            price: 23000
         },
          { 
             id:8, 
-            image: "/image/imgLin1.jpeg",
-            text: 'Lacey Thong',
-            price: 3700
+            image: "/image/image3.jpg",
+            text: 'Polo with Contrast Trims',
+            price: 14000
         },
          { 
             id:9, 
-            image: "/image/imgLin1.jpeg",
-            text: 'Lacey Thong',
+            image: "/image/Frame1.jpg",
+            text: 'Gradient Graphic T-shirt',
             price: 3700
         },
          { 
             id:10, 
-            image: "/image/imgLin1.jpeg",
-            text: 'Lacey Thong',
-            price: 3700
+            image: "/image/image2.jpg",
+            text: 'Polo with Tipping Details',
+            price: 27000
         },
 
          { 
             id:11, 
-            image: "/image/imgLin1.jpeg",
-            text: 'Lacey Thong',
-            price: 3700
+            image: "/image/Frame11.jpg",
+            text: 'Cool Polo',
+            price: 17000
         },
 
          { 
             id:12, 
-            image: "/image/imgLin1.jpeg",
-            text: 'Lacey Thong',
-            price: 3700
+            image: "/image/Frame12.jpg",
+            text: 'Cool Stripes',
+            price: 47000
         },
 
-         { 
-            id:13, 
-            image: "/image/imgLin1.jpeg",
-            text: 'Lacey Thong',
-            price: 3700
-        },
+        //  { 
+        //     id:13, 
+        //     image: "/image/imgLin1.jpeg",
+        //     text: 'Lacey Thong',
+        //     price: 3700
+        // },
 
-         { 
-            id:14, 
-            image: "/image/imgLin1.jpeg",
-            text: 'Lacey Thong',
-            price: 3700
-        },
+        //  { 
+        //     id:14, 
+        //     image: "/image/imgLin1.jpeg",
+        //     text: 'Lacey Thong',
+        //     price: 3700
+        // },
 
-         { 
-            id:15, 
-            image: "/image/imgLin1.jpeg",
-            text: 'Lacey Thong',
-            price: 3700
-        },
+        //  { 
+        //     id:15, 
+        //     image: "/image/imgLin1.jpeg",
+        //     text: 'Lacey Thong',
+        //     price: 3700
+        // },
 
-         { 
-            id:16, 
-            image: "/image/imgLin1.jpeg",
-            text: 'Lacey Thong',
-            price: 3700
-        },
+        //  { 
+        //     id:16, 
+        //     image: "/image/imgLin1.jpeg",
+        //     text: 'Lacey Thong',
+        //     price: 3700
+        // },
 
-         { 
-            id:17, 
-            image: "/image/imgLin1.jpeg",
-            text: 'Lacey Thong',
-            price: 3700
-        },
+        //  { 
+        //     id:17, 
+        //     image: "/image/imgLin1.jpeg",
+        //     text: 'Lacey Thong',
+        //     price: 3700
+        // },
 
-         { 
-            id:18, 
-            image: "/image/imgLin1.jpeg",
-            text: 'Lacey Thong',
-            price: 3700
-        },
+        //  { 
+        //     id:18, 
+        //     image: "/image/imgLin1.jpeg",
+        //     text: 'Lacey Thong',
+        //     price: 3700
+        // },
 
-         { 
-            id:19, 
-            image: "/image/imgLin1.jpeg",
-            text: 'Lacey Thong',
-            price: 3700
-        },
+        //  { 
+        //     id:19, 
+        //     image: "/image/imgLin1.jpeg",
+        //     text: 'Lacey Thong',
+        //     price: 3700
+        // },
 
-         { 
-            id:20, 
-            image: "/image/imgLin1.jpeg",
-            text: 'Lacey Thong',
-            price: 3700
-        },
+        //  { 
+        //     id:20, 
+        //     image: "/image/imgLin1.jpeg",
+        //     text: 'Lacey Thong',
+        //     price: 3700
+        // },   
+]
 
-        
-    ]
+const Products = () => {
+//   const dispatch = useAppDispatch();
+  const [selectedProduct, setSelectedProduct] = useState<Item | null>(null);
 
-const Products= ()=>{
-    const dispatch = useAppDispatch();
+//   const addProductToCart = (item: Item) => {
+//     const payload = { ...item, quantity: 1 };
+//     dispatch(addToCart(payload));
+//     toast.success("Added to cart");
+//   };
 
-    // State to control modal visibility and selected product
-    // const [showCart, setShowCart] = useState<boolean>(false);
-    // const [selectedProduct, setSelectedProduct] = useState<itemsProps[number] | null>(null);
+  return (
+    <div>
+      <div className="p-16 grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {items.map((item) => (
+          <div
+            key={item.id}
+            className="relative bg-white hover:border-blue-300 p-2 rounded-md mb-5"
+          >
+            <img src={item.image} alt="" className="w-full rounded-sm h-[200px]" />
+            <p>{item.text}</p>
+            <p className="font-bold">₦{item.price}</p>
+            <img src={aiStar} alt="" />
 
-    // const handleCartVisibility = (item: itemsProps[number]) => {
-    //     setSelectedProduct(item);
-    //     setShowCart(true);
-    // };
-
-    // const handleCloseCart = () => {
-    //     setShowCart(false);
-    //     setSelectedProduct(null);
-    // };
-
-    // useEffect(() => {
-    //     console.log("Updated showCart:", showCart, selectedProduct);
-    // }, [showCart, selectedProduct]);
-
-   const addProductToCart = (item: itemsProps[number]) => {
-    const payload = {
-      ...item,
-      quantity: 1,
-    };
-    dispatch(addToCart(payload))
-    toast.success("Added to cart");
-  };
-
-    return(
-        <div>
-            <div className="grid gap-5 
-                grid-cols-1 
-                sm:grid-cols-2 
-                md:grid-cols-3 
-                lg:grid-cols-4 
-                xl:grid-cols-5 ">
-                {items.map((item) => (
-                    <div key={item.id} className="border-4 relative bg-white border-gray-500 hover:border-blue-300 p-2 rounded-md mb-5">
-                        <img src={item.image} alt="" className="w-full rounded-sm h-[200px]"/>
-                        <p>{item.text}</p>
-                        <p className="font-bold">{item.price}</p>
-                        <Button onClick={() => addProductToCart(item)}>Select Option</Button>
-                        
-                    </div>
-                ))}
+            <div className="flex gap-2 mt-2">
+              {/* <Button className="bg-black" onClick={() => addProductToCart(item)}>
+                Add to Cart
+              </Button> */}
+              <Button className="bg-black" onClick={() => setSelectedProduct(item)}>
+                More Info
+              </Button>
             </div>
-            {/* Modal rendered once, outside the map
-            {showCart && selectedProduct && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 transition-opacity duration-300 ">
-                    <AddToCart product={selectedProduct} onClose={handleCloseCart}/>
-                </div>
-            )} */}
-        </div>
-    )
-    
-}
-export default Products
+          </div>
+        ))}
+      </div>
 
-// function dispatch(arg0: { payload: Products; type: "cart/addToCart"; }) {
-//     throw new Error("Function not implemented.");
-// }
+      {selectedProduct && (
+        <MoreInfo
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
+    </div>
+  );
+};
+
+export default Products;
+

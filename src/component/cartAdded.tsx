@@ -1,115 +1,75 @@
-//import React from 'react'
-//import { DeleteIcon, Store } from "lucide-react"
-import {X} from "lucide-react"
-//import Counter from "./counter";
+import { X } from "lucide-react";
 import Button from "./button";
-//import { useContext } from "react";
-//import { ItemContext } from "../context/context";
 import { useAppSelector } from "../redux/hooks";
-//import {store} from "../redux/Store"
-//import Products from "../data/product";
 import CartProduct from "./CartProducts";
-//import AddToCart from "./addToCart";
+import Footer from "./footer";
 
-type CartAddedProps ={
-    onClose?: ()=>void;
-    onClick?: (event:React.MouseEvent<HTMLButtonElement,MouseEvent>) =>void;
-    setOpenCart?: React.Dispatch<React.SetStateAction<boolean>>
-    // item: Item;
-}
+type CartAddedProps = {
+  onClose?: () => void;
+  setOpenCart?: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
-const CartAdded :React.FC<CartAddedProps>=({setOpenCart}) => {
-    const products = useAppSelector((state) =>state.CartAdded)
-    const getTotal= () =>{
-      let Total = 0;
-      products.forEach((item)=>{ Total += Math.ceil(item.price ) * item.quantity})
-      return Total
-    };
+const CartAdded: React.FC<CartAddedProps> = ({ setOpenCart }) => {
+  const products = useAppSelector((state) => state.CartAdded);
 
-  //   const cartContext = useContext(ItemContext);
-
-  //  if (!cartContext) {
-  //       throw new Error("CartAdded must be used within an ItemProvider");
-  //  }
-
-  // const { item, setItem } = cartContext;
-
-  //   // Clear the entire cart
-  // const clearCart = () => setItem([]);
-
-  //   const removeItem = (id: number) => {
-  //   setItem(prev => prev.filter(i => i.id !== id));
-  // };
+  const getTotal = () => {
+    let Total = 0;
+    products.forEach((item) => {
+      Total += Math.ceil(item.price) * item.quantity;
+    });
+    return Total;
+  };
 
   return (
-    <div className="w-50vh min-h-screen overflow-y-scroll absolute top-0 right-0 bg-white shadow-2xl p-3 z-20 ">
+    <div className="min-h-screen w-full bg-white p-4 sm:p-8">
+      <div className="flex justify-between items-center mb-6">
+        <h3 className="text-2xl font-bold">Your Cart</h3>
+        <X className="cursor-pointer" onClick={() => setOpenCart && setOpenCart(false)} />
+      </div>
 
-        <div className='flex justify-end m-3 gap-4  mb-8'>
-            {/* <div className='flex justify-start gap-1'>
-                <DeleteIcon/>
-            </div> */}
-            <div className="absolute right top m-6 text-2xl cursor-pointer ">
-                 <X onClick={()=>setOpenCart && setOpenCart(false)}/>
-            </div>
-        </div>
-
-        
-        <h3 className=" pt-5 text-lg font-medium text-center text-gray-500 uppercase">Your Cart</h3>
-        {/* <div>
-            {item.length === 0 ? (
-        <p className="text-center text-gray-500">Your cart is empty.</p>
-      ) : (
-        item.map(i => (
-          <div  className="flex items-center gap-4 border-b py-4">
-            <img src={i.image} alt={i.text} className="w-16 h-16 object-cover rounded" />
-            <div className="flex-1">
-              <h4 className="font-semibold">{i.text}</h4>
-              <p className="text-sm text-gray-500">₦{i.price}</p>
-            </div>
-            <Counter />
-            <div onClick={() => removeItem(i.id)} className="cursor-pointer text-red-500">
-              <DeleteIcon />
-            </div>
-          </div>
-        ))
-      )}
-        </div> */}
-        {/* <div>
-            <DeleteIcon/>
-            <p>Remove</p>
-                <p onClick={clearCart} className="text-black text-xl cursor-pointer"> Clear Cart</p>
-
-        </div> */}
-        <div>
-          {
-          products ?.map((item: any) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Cart Items */}
+        <div className="md:col-span-2 space-y-4">
+          {products?.map((item: any) => (
             <CartProduct
+              key={item.id}
               id={item.id}
               image={item.image}
-              text= {item.text}
+              text={item.text}
               price={item.price}
               quantity={item.quantity}
-
             />
-          ))
-        }
+          ))}
         </div>
 
-        <div className="flex justify-between p-3">
-          <p>
-            Total
-          </p>
-          <p>
-           <p>₦{getTotal().toLocaleString()}</p>
-          </p>
-        </div>
-        <div className=" flex justify-center gap-5">
-            <Button>View Cart</Button>
-            <Button>Proceed to checkout</Button>
+        {/* Order Summary */}
+        <div className="border rounded p-4 shadow-md">
+          <h4 className="text-lg font-semibold mb-4">Order Summary</h4>
+          <div className="flex justify-between mb-2">
+            <span>Subtotal</span>
+            <span>₦{getTotal().toLocaleString()}</span>
+          </div>
+          <div className="flex justify-between mb-2">
+            <span>Discount (-20%)</span>
+            <span className="text-red-500">-₦{(getTotal() * 0.2).toLocaleString()}</span>
+          </div>
+          <div className="flex justify-between mb-4">
+            <span>Delivery Fee</span>
+            <span>₦1500</span>
+          </div>
+          <div className="flex justify-between font-bold text-lg">
+            <span>Total</span>
+            <span>₦{(getTotal() * 0.8 + 1500).toLocaleString()}</span>
+          </div>
 
+          <div className="mt-4 flex flex-col gap-3">
+            <Button className="w-full bg-black text-white">Go to Checkout</Button>
+          </div>
         </div>
+      </div>
+      <Footer/>
     </div>
-  )
-}
+  );
+};
 
-export default CartAdded
+export default CartAdded;

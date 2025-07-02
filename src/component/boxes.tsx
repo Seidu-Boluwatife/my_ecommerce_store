@@ -32,7 +32,7 @@ const Boxes:React.FC<BoxesProps> = ()=>{
             
             {className}
             {children} */}
-            <Products/>
+            {/* <Products/> */}
             
 
         </div>

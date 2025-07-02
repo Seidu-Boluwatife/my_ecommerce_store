@@ -3,43 +3,61 @@
 import { SearchIcon, ShoppingCartIcon } from "lucide-react"
 //import { useSelector } from "react-redux"
 import { useAppSelector } from "../redux/hooks"
+import Header from "./header"
+import {Link } from 'react-router-dom'
 
 //import Button from "./Button"
-const NavBar =({setOpenCart}:any) =>{
+const NavBar =({}:any) =>{
     const count = useAppSelector((store) => store.CartAdded.length)
 
     return(
-        <header className="flex flex-row border-gray-700/50 pl-16 pr-16  pt-2 pb-2 justify-between text-white  items-center-100  sticky-top-0  w-full fixed  top-0  z-50 bg-gray-900 ">
-                <div className="text-amber-500 text-2xl ">
-                    She's Essentials
-                </div>
-            <div className="flex justify-between gap-10 pl-4 pr-4  rounded-full p-1  text-xs">
-                {/* <div className="hover:text-blue-500 underline-offset-1 cursor-pointer">Home</div>
-                <div className="hover:text-blue-500 underline-offset-1 cursor-pointer">NGN</div>
+        <div className="flex flex-col mb-24 fixed top-0 left-0 right-0  z-50">
+            <div>
+                  <Header/>
+            </div>
+           <div>
+                <section className="flex flex-row shadow-2xl  pl-16 pr-16  pt-2 pb-2 justify-between text-black bg-white  items-center-100   w-full    ">
                
-                <div className="hover:text-blue-500 underline-offset-1 cursor-pointer">Cart</div> */}
-                {/* <Moon className="hover:text-blue-500 underline-offset-1 cursor-pointer"/> */}
+              
+ 
+                    <div className="text-black text-2xl font-bold ">
+                        SHOP.CO
+                    </div>
+                    <div className=" space-x-3">
+                        <Link to='/'>
+                            Home
+                        </Link>
+                        <Link to ='/shop'>
+                            Shop
+                        </Link>
+                    </div>
+           
+                <div className="flex items-center justify-between border-2 rounded-md w-[50%] pl-3 pr-3">
+                    <input type="text" placeholder="search" className="  pl-2 w-full outline-none" />
+                    {<SearchIcon className="   hover cursor-pointer outline-none" size={16}/>}
 
-            </div>
-            <div className="flex items-center justify-between border-2 rounded-md w-[50%] pl-3 pr-3">
-                <input type="text" placeholder="search" className="  pl-2 w-full outline-none" />
-                {<SearchIcon className="   hover cursor-pointer outline-none" size={16}/>}
+                </div>
+{/* onClick ={() =>setOpenCart(true)} */}
+                <div  className="flex gap-4 relative ">
+                    <div className="hover:text-blue-500 underline-offset-1 cursor-pointer">Login</div>
 
-            </div>
-            <div onClick ={() =>setOpenCart(true)} className="flex gap-4 relative ">
-             <div className="hover:text-blue-500 underline-offset-1 cursor-pointer">Login</div>
+                   <Link to='/cart'>
+                        <ShoppingCartIcon />
+                   </Link>
+                    <div className="absolute text-xs rounded-full bg-black w-3.5 h-3.5 font-bold -top-1 -right-4 text-white flex items-center justify-center">
+                            {count}
+                    </div>
 
-             {<ShoppingCartIcon />}
-             <div className="absolute rounded-full bg-green-800 w-5 h-5 -top-3 -right-2 text-white flex items-center justify-center">
-                    {count}
-             </div>
-
-            </div>
+                </div>
 
 
             
             
-        </header>
+            </section>
+           </div>
+
+        </div>
+        
      )
 }
 export default NavBar

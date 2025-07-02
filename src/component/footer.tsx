@@ -5,7 +5,7 @@ import { Phone, MapPin, MessageCircle, Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8">
+    <footer className="bg-black text-white py-8">
       <div className="container mx-auto flex flex-col md:flex-row justify-between px-4">
         {/* Contact Us Section */}
         <div className="mb-6 md:mb-0">

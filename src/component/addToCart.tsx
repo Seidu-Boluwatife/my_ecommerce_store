@@ -4,12 +4,6 @@ import Counter from "../../src/component/counter"
 import { useContext } from 'react';
 import { ItemContext } from '../context/context';
 
-// type AddToCart ={
-//     counter:number;
-
-// }
-
-
 type AddToCartProps ={
     onClose: ()=>void;
     product: Item;
