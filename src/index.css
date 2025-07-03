@@ -1,2 +1,11 @@
 
 @import "tailwindcss";
+
+@media (min-width: 421px) and (max-width: 639px) {
+    .test{
+        color: #111;
+    }
+    .test2{
+        color: #fff;
+    }
+}

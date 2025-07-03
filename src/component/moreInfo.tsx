@@ -194,7 +194,23 @@ const MoreInfo = ({ product, onClose }: MoreInfoProps) => {
 
   return (
   <div className="fixed top-0 left-0 w-full h-screen bg-black/50 z-50 flex items-center justify-center">
-    <div className="p-6 sm:p-10 bg-white rounded-md w-[90%] md:w-[70%] max-h-[90vh] overflow-y-auto relative">
+   <div className="
+  fixed inset-0 
+  m-auto 
+  bg-white 
+  rounded-md 
+  w-[95%] 
+  sm:w-[90%] 
+  md:w-[70%] 
+  h-[70vh]
+  md:max-h-[90vh] 
+  overflow-y-auto 
+  p-4 
+  sm:p-6 
+  md:p-10 
+  z-50
+">
+
       <button
         onClick={onClose}
         className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
@@ -203,8 +219,8 @@ const MoreInfo = ({ product, onClose }: MoreInfoProps) => {
       </button>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <img src={product.image} alt={product.text} className="h-full w-full object-contain rounded" />
+        <div className='size-auto'>
+          <img src={product.image} alt={product.text} className="   h-full w-full object-contain rounded" />
         </div>
 
         <div className="space-y-4">
